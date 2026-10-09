@@ -7,21 +7,18 @@ public class PlayerControls : MonoBehaviour
 {
 
     private Rigidbody rb;
-    public Transform orientation;
     public Transform player;
-    public Transform playerOBJ;
-    public float rotationSpeed;
 
     public float movementSpeed = 5;
     public float jumpForce = 5;
 
     public Transform groundCheck;
     public LayerMask ground;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
         rb = GetComponent<Rigidbody>();
     }
 
@@ -29,19 +26,11 @@ public class PlayerControls : MonoBehaviour
     void Update()
     {
 
-        Vector3 viewDir = player.position - new Vector3(transform.position.x, player.position.y, transform.position.z);
-        orientation.forward = viewDir.normalized;
+        Vector2 input = new Vector2(UnityEngine.Input.GetAxisRaw("Horizontal"), UnityEngine.Input.GetAxisRaw("Vertical"));
 
-        float horizontalInput = UnityEngine.Input.GetAxisRaw("Horizontal");
-        float VerticalInput = UnityEngine.Input.GetAxisRaw("Vertical");
+        Vector3 MoveDirectiron = (transform.right * input.x) + (transform.forward * input.y);
 
-        Vector3 inputDir = orientation.forward * VerticalInput + orientation.right * horizontalInput;
-
-        if (inputDir != Vector3.zero)
-        {
-            playerOBJ.forward = Vector3.Slerp(playerOBJ.forward, inputDir.normalized, Time.deltaTime * rotationSpeed);
-        }
-        rb.linearVelocity = new Vector3(horizontalInput * movementSpeed, rb.linearVelocity.y, VerticalInput * movementSpeed);
+        rb.linearVelocity = new Vector3(MoveDirectiron.x * movementSpeed, rb.linearVelocity.y, MoveDirectiron.z * movementSpeed);
 
         if (UnityEngine.Input.GetButton("Jump") && isGrounded())
         {
