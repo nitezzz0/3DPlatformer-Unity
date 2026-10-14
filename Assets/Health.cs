@@ -1,3 +1,5 @@
+using Microsoft.Unity.VisualStudio.Editor;
+using UnityEditor.UI;
 using UnityEngine;
 
 public class Health : MonoBehaviour
@@ -24,34 +26,34 @@ public class Health : MonoBehaviour
     {
         if (health == 4)
         {
-            healthUI.GetComponent<Renderer>().enabled = true;
-            healthUI1.GetComponent<Renderer>().enabled = true;
-            healthUI2.GetComponent<Renderer>().enabled = true;
-            healthUI3.GetComponent<Renderer>().enabled = true;
+            healthUI.GetComponent<UnityEngine.UI.Image>().enabled = true;
+            healthUI1.GetComponent<UnityEngine.UI.Image>().enabled = true;
+            healthUI2.GetComponent<UnityEngine.UI.Image>().enabled = true;
+            healthUI3.GetComponent<UnityEngine.UI.Image>().enabled = true;
         }
 
         if (health == 3)
         {
-            healthUI.GetComponent<Renderer>().enabled = false;
-            healthUI1.GetComponent<Renderer>().enabled = true;
-            healthUI2.GetComponent<Renderer>().enabled = true;
-            healthUI3.GetComponent<Renderer>().enabled = true;
+            healthUI.GetComponent<UnityEngine.UI.Image>().enabled = false;
+            healthUI1.GetComponent<UnityEngine.UI.Image>().enabled = true;
+            healthUI2.GetComponent<UnityEngine.UI.Image>().enabled = true;
+            healthUI3.GetComponent<UnityEngine.UI.Image>().enabled = true;
         }
 
         if (health == 2)
         {
-            healthUI.GetComponent<Renderer>().enabled = false;
-            healthUI1.GetComponent<Renderer>().enabled = false;
-            healthUI2.GetComponent<Renderer>().enabled = true;
-            healthUI3.GetComponent<Renderer>().enabled = true;
+            healthUI.GetComponent<UnityEngine.UI.Image>().enabled = false;
+            healthUI1.GetComponent<UnityEngine.UI.Image>().enabled = false;
+            healthUI2.GetComponent<UnityEngine.UI.Image>().enabled = true;
+            healthUI3.GetComponent<UnityEngine.UI.Image>().enabled = true;
         }
 
         if (health == 1)
         {
-            healthUI.GetComponent<Renderer>().enabled = false;
-            healthUI1.GetComponent<Renderer>().enabled = false;
-            healthUI2.GetComponent<Renderer>().enabled = false;
-            healthUI3.GetComponent<Renderer>().enabled = true;
+            healthUI.GetComponent<UnityEngine.UI.Image>().enabled = false;
+            healthUI1.GetComponent<UnityEngine.UI.Image>().enabled = false;
+            healthUI2.GetComponent<UnityEngine.UI.Image>().enabled = false;
+            healthUI3.GetComponent<UnityEngine.UI.Image>().enabled = true;
         }
     }
 }
