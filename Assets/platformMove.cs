@@ -1,23 +1,49 @@
+using System.Collections;
 using UnityEngine;
-using UnityEngine.UIElements;
 
-public class platformMove : MonoBehaviour
+public class SmoothShake : MonoBehaviour
 {
-    [SerializeField] private float targetZS = 10f;
-    [SerializeField] private float targetZF = 10.0f;
-    [SerializeField] private float speed = 10.0f;
+    public Transform ObjectTransform;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [Header("Floating Settings")]
+    public float shakeAmount = 0.1f;
+    public float shakeSpeed = 2.0f;
+
+    Vector3 originalPos;
+    private float noiseTimer;
+
+    void Awake()
     {
-        gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y , targetZS);
+        if (ObjectTransform == null)
+        {
+            ObjectTransform = GetComponent(typeof(Transform)) as Transform;
+        }
     }
 
-    // Update is called once per frame
+    void OnEnable()
+    {
+        originalPos = ObjectTransform.localPosition;
+
+        noiseTimer = Random.Range(0f, 100f);
+    }
+
     void Update()
     {
 
-     LeanTween.moveZ(gameObject, targetZF, speed).setEase(LeanTweenType.easeInOutQuad).setLoopPingPong();
+        noiseTimer += Time.deltaTime * shakeSpeed;
+
+        // Generate smooth, non-stop pseudo-random offsets using Perlin Noise
+        float x = (Mathf.PerlinNoise(noiseTimer, 0f) - 0.5f) * shakeAmount;
+        float y = (Mathf.PerlinNoise(0f, noiseTimer) - 0.5f) * shakeAmount;
+        float z = (Mathf.PerlinNoise(noiseTimer, noiseTimer) - 0.5f) * shakeAmount;
+
+
+        ObjectTransform.localPosition = originalPos + new Vector3(x, y, z);
+    }
+
+
+    public void MakeShake()
+    {
 
     }
 }
