@@ -11,10 +11,20 @@ public class SmoothShak : MonoBehaviour
     public float shakeAmountR = 0.1f;
     public float shakeSpeedR = 2.0f;
 
+    public Transform cameraTransform;
+    public float rotationSpeed = 10f;
+
     Vector3 originalPos;
     Vector3 originalRos;
     private float noiseTimer;
     private float noiseTimerR;
+
+    private Rigidbody rb;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
 
     void Awake()
     {
@@ -26,35 +36,27 @@ public class SmoothShak : MonoBehaviour
 
     void OnEnable()
     {
-        originalPos = ObjectTransform.localPosition;
-        originalRos = ObjectTransform.localEulerAngles;
+
+        originalRos = ObjectTransform.eulerAngles;
 
         noiseTimer = Random.Range(0f, 100f);
     }
-
-    void Update()
+    void FixedUpdate()
     {
-
-        noiseTimer += Time.deltaTime * shakeSpeed;
-        noiseTimerR += Time.deltaTime * shakeSpeedR;
-
-        // Generate smooth, non-stop pseudo-random offsets using Perlin Noise
-        float x = (Mathf.PerlinNoise(noiseTimer, 0f) - 0.5f) * shakeAmount;
-        float y = (Mathf.PerlinNoise(0f, noiseTimer) - 0.5f) * shakeAmount;
-        float z = (Mathf.PerlinNoise(noiseTimer, noiseTimer) - 0.5f) * shakeAmount;
-
-        float x2 = (Mathf.PerlinNoise(noiseTimerR, 0f) - 0.5f) * shakeAmountR;
-        float y2 = (Mathf.PerlinNoise(0f, noiseTimerR) - 0.5f) * shakeAmountR;
-        float z2 = (Mathf.PerlinNoise(noiseTimerR, noiseTimerR) - 0.5f) * shakeAmountR;
+        if (cameraTransform != null)
+        {
 
 
-        ObjectTransform.localPosition = originalPos + new Vector3(x, y, z);
-        ObjectTransform.localEulerAngles = originalRos + new Vector3(x2, y2, z2);
-    }
+            noiseTimerR += Time.deltaTime * shakeSpeedR;
 
+            float cameraYangle = cameraTransform.eulerAngles.y;
+            Quaternion targetRotation = Quaternion.Euler(0, cameraYangle, 0);
+            Quaternion smoothedRotation = Quaternion.Slerp(rb.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime);
+            rb.MoveRotation(smoothedRotation);
 
-    public void MakeShake()
-    {
-
+            float x2 = (Mathf.PerlinNoise(noiseTimerR, 0f) - 0.5f) * shakeAmountR;
+            float z2 = (Mathf.PerlinNoise(noiseTimerR, noiseTimerR) - 0.5f) * shakeAmountR;
+            ObjectTransform.localEulerAngles = new Vector3(x2, smoothedRotation.eulerAngles.y, z2);
+        }
     }
 }
