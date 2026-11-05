@@ -36,7 +36,7 @@ public class BoatControls : MonoBehaviour
     void FixedUpdate()
     {
 
-        Vector3 moveDirection = (transform.right * input.x + transform.forward * input.y).normalized;
+        Vector3 moveDirection = (transform.right * 0 + transform.forward * input.y).normalized;
 
         rb.AddForce(moveDirection * movementSpeed, ForceMode.Acceleration);
 
