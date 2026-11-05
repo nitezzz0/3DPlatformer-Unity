@@ -1,32 +1,47 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.Windows;
-using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class BoatControls : MonoBehaviour
 {
+    public float movementSpeed = 50f;
+    public float waterDrag = 2f;      
+    public PlatformCollider targetPlatform;
 
     private Rigidbody rb;
-    public Transform player;
+    private Vector2 input;
+    private float startY;
 
-    public float movementSpeed = 5;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        startY = rb.position.y;
+        rb.useGravity = false;
+
+
+        rb.linearDamping = waterDrag;
     }
 
-    // Update is called once per frame
     void Update()
     {
-
-        Vector2 input = new Vector2(UnityEngine.Input.GetAxisRaw("Horizontal"), UnityEngine.Input.GetAxisRaw("Vertical"));
-
-        Vector3 MoveDirectiron = (transform.right * input.x) + (transform.forward * input.y);
-
-        rb.linearVelocity = new Vector3(MoveDirectiron.x * movementSpeed, rb.linearVelocity.y, MoveDirectiron.z * movementSpeed);
-
+        // Reset input to zero if not colliding, so it drifts to a stop using drag
+        if (targetPlatform.canDrive)
+        {
+            input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        }
+        else
+        {
+            input = Vector2.zero;
+        }
     }
 
+    void FixedUpdate()
+    {
+
+        Vector3 moveDirection = (transform.right * input.x + transform.forward * input.y).normalized;
+
+        rb.AddForce(moveDirection * movementSpeed, ForceMode.Acceleration);
+
+        Vector3 pos = rb.position;
+        pos.y = startY;
+        rb.position = pos;
+    }
 }
