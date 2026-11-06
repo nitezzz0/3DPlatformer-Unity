@@ -40,10 +40,6 @@ public class PlayerControls : MonoBehaviour
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce, rb.linearVelocity.z);
         }
 
-        if (rb.linearVelocity.y < 0)
-        {
-            rb.AddForce(Vector3.up * Physics.gravity.y * (fallMultiplier - 1), ForceMode.Acceleration);
-        }
 
     }
 
