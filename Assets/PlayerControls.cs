@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 using UnityEngine.Windows;
 using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
@@ -8,6 +9,8 @@ public class PlayerControls : MonoBehaviour
 
     private Rigidbody rb;
     public Transform player;
+
+    public float fallMultiplier;
 
     public float movementSpeed = 5;
     public float jumpForce = 5;
@@ -35,6 +38,11 @@ public class PlayerControls : MonoBehaviour
         if (UnityEngine.Input.GetButton("Jump") && isGrounded())
         {
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce, rb.linearVelocity.z);
+        }
+
+        if (rb.linearVelocity.y < 0)
+        {
+            rb.AddForce(Vector3.up * Physics.gravity.y * (fallMultiplier - 1), ForceMode.Acceleration);
         }
 
     }
