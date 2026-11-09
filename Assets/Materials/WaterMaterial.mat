@@ -109,15 +109,15 @@ Material:
     - _Depth: 4.12
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _Distance: 0.5
+    - _Distance: 0.84
     - _DistortSpeed: 519.55
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EdgeDistance: -0.29
-    - _EdgeRippleFrequency: 101.7
+    - _EdgeRippleFrequency: 113.9
     - _EdgeRippleSpeed: 0.06
     - _EnvironmentReflections: 1
-    - _FoamAmount: 64.7
+    - _FoamAmount: 50.8
     - _FoamCutoff: 0.31
     - _GlossMapScale: 0
     - _Glossiness: 0
@@ -143,7 +143,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DeepWater: {r: 0.26039866, g: 0.5882459, b: 0.82641506, a: 1}
     - _DistortSpeed_1: {r: 1, g: 1, b: 0, a: 0}
-    - _EdgeRippleColor: {r: 0.759434, g: 0.89852214, b: 1, a: 1}
+    - _EdgeRippleColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Offset: {r: 1, g: 0, b: 0, a: 0}
     - _ShallowWater: {r: 0.25882354, g: 0.5882353, b: 0.827451, a: 1}

@@ -37,7 +37,7 @@ MonoBehaviour:
   active: 1
   shadows:
     m_OverrideState: 1
-    m_Value: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    m_Value: {r: 0.5169811, g: 0.5169811, b: 0.5169811, a: 1}
   highlights:
     m_OverrideState: 1
     m_Value: {r: 0.5, g: 0.5, b: 0.5, a: 1}
@@ -796,13 +796,13 @@ MonoBehaviour:
     m_Value: 0
   gaussianStart:
     m_OverrideState: 1
-    m_Value: 10
+    m_Value: 25.08
   gaussianEnd:
     m_OverrideState: 1
-    m_Value: 30
+    m_Value: 297.4
   gaussianMaxRadius:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.909
   highQualitySampling:
     m_OverrideState: 1
     m_Value: 0

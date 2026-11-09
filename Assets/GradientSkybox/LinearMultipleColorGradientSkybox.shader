@@ -8,6 +8,8 @@
 			"RenderType" = "Background"
 			"Queue" = "Background"
 			"PreviewType" = "Skybox"
+			"IgnoreProjector" = "True"
+			"DisableBatching" = "False"
 		}
 		Pass {
 			ZWrite Off
@@ -17,6 +19,8 @@
 
 			#pragma vertex vert
 			#pragma fragment frag
+			// This tells URP's internal multi-compile systems not to generate fog variants for this pass
+			#pragma skip_variants FOG_LINEAR FOG_EXP FOG_EXP2
 
 			sampler2D _RampTex;
 			float3 _Up;
