@@ -102,8 +102,8 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
-    - _FadeMax: 568.3
-    - _FadeMin: 67.1
+    - _FadeMax: 594.8
+    - _FadeMin: 93
     - _Falloff_Amount: 0.06
     - _Fresnel_Size: 16.96
     - _GlossMapScale: 0
