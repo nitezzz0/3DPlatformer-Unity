@@ -106,7 +106,7 @@ Material:
     - _Cull: 2
     - _Cutoff: 0.5
     - _DeapthSampleOffset: 0
-    - _Depth: -1.5
+    - _Depth: 28.76
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _Distance: 0.84
@@ -142,7 +142,7 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DeepWater: {r: 0.30980393, g: 0.60784316, b: 0.40784314, a: 1}
+    - _DeepWater: {r: 0.1473193, g: 0.4566037, b: 0.24905756, a: 1}
     - _DistortSpeed_1: {r: -0.4, g: 0.4, b: 0, a: 0}
     - _EdgeRippleColor: {r: 0.6199299, g: 1, b: 0.57924527, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

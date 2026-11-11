@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
@@ -17,6 +18,7 @@ public class PlayerControls : MonoBehaviour
 
     public Transform groundCheck;
     public LayerMask ground;
+    public LayerMask bounce;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -45,8 +47,16 @@ public class PlayerControls : MonoBehaviour
             rb.AddForce(Vector3.up * Physics.gravity.y * (fallMultiplier - 1), ForceMode.Acceleration);
         }
 
+        if (isBounce())
+        {
+            rb.linearVelocity = new Vector3(rb.linearVelocity.x, 11.2f, rb.linearVelocity.z);
+        }
+
     }
 
+
     bool isGrounded() => Physics.CheckSphere(groundCheck.position, 1f, ground);
+    bool isBounce() => Physics.CheckSphere(groundCheck.position, 1f, bounce);
+
 
 }
