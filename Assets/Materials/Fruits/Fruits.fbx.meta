@@ -28,7 +28,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: PassionFruit
-    second: {fileID: 2100000, guid: 95f3e0bfa59dcd94ab51fff975adf379, type: 2}
+    second: {fileID: 2100000, guid: 2150a1278da4fc34f8930122077354ca, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
