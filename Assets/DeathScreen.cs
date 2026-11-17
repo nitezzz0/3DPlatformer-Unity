@@ -14,7 +14,7 @@ public class DeathScreen : MonoBehaviour
 
     private Material instanceMaterial;
     private Coroutine transitionCoroutine;
-    private bool hasTriggered = false;
+    public bool hasTriggered = false;
 
     private void Start()
     {
