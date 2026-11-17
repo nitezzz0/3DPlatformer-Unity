@@ -134,7 +134,7 @@ Material:
     - _XRMotionVectorsPass: 1
     - _ZWrite: 1
     - _tiling: 2.9
-    - _tiling2: -1.52
+    - _tiling2: -1.3
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
