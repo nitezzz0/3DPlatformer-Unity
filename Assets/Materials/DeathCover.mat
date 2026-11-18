@@ -104,7 +104,7 @@ Material:
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _CloudAlpha: -1
-    - _CloudsPower: 5
+    - _CloudsPower: 1.5
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
