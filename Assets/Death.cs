@@ -8,16 +8,9 @@ public class Death : MonoBehaviour
     public bool PlayerDead;
     private bool HideCanvas;
     public Canvas UICanvas;
-    public CanvasGroup deathCanvasGroup; 
+    public GameObject deathCanvas; 
     public float fadeDuration = 1.0f;
 
-    void Start()
-    {
-
-        deathCanvasGroup.alpha = 0f;
-        deathCanvasGroup.interactable = false;
-        deathCanvasGroup.blocksRaycasts = false;
-    }
 
     void Update()
     {
@@ -29,7 +22,6 @@ public class Death : MonoBehaviour
 
         if (PlayerDead && !HideCanvas)
         {
-
             UICanvas.enabled = !UICanvas.enabled;
             HideCanvas = true;
             Cursor.lockState = CursorLockMode.None;
@@ -46,14 +38,10 @@ public class Death : MonoBehaviour
         while (elapsedTime < fadeDuration)
         {
             elapsedTime += Time.deltaTime;
-            deathCanvasGroup.alpha = Mathf.Lerp(0f, 1f, elapsedTime / fadeDuration);
             yield return null;
             PlayerDead = false;
         }
 
-        deathCanvasGroup.alpha = 1f;
-        deathCanvasGroup.interactable = true;
-        deathCanvasGroup.blocksRaycasts = true;
     }
 
     bool isDead() => Physics.CheckSphere(groundCheck.position, 1f, deathlayer);

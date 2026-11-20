@@ -45819,7 +45819,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 393134149}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 626086767}
+        m_TargetAssemblyTypeName: savePos, Assembly-CSharp
+        m_MethodName: Exit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &393134149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59536,6 +59548,8 @@ MonoBehaviour:
   Player: {fileID: 1546449137}
   CheckPoint: {fileID: 0}
   flag: {fileID: 0}
+  DeathCanvas: {fileID: 1713542315}
+  gameScene: MainMenu
 --- !u!4 &626086768
 Transform:
   m_ObjectHideFlags: 0
@@ -178771,7 +178785,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2131003529}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 626086767}
+        m_TargetAssemblyTypeName: savePos, Assembly-CSharp
+        m_MethodName: retry
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2131003529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179636,6 +179662,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 881568809}
     - target: {fileID: 2096284936562746114, guid: b106d97306857d74c819e37343c5cd26, type: 3}
+      propertyPath: deathCanvas
+      value: 
+      objectReference: {fileID: 1713542315}
+    - target: {fileID: 2096284936562746114, guid: b106d97306857d74c819e37343c5cd26, type: 3}
       propertyPath: deathCanvasGroup
       value: 
       objectReference: {fileID: 0}
@@ -180047,7 +180077,6 @@ SceneRoots:
   - {fileID: 543450652456440739}
   - {fileID: 4122061755828768351}
   - {fileID: 1379745081}
-  - {fileID: 626086768}
   - {fileID: 657850880}
   - {fileID: 1409393893}
   - {fileID: 461064822}
@@ -180070,3 +180099,4 @@ SceneRoots:
   - {fileID: 866598851}
   - {fileID: 1484365243}
   - {fileID: 1108674222}
+  - {fileID: 626086768}
