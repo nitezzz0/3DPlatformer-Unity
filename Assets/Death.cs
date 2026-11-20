@@ -3,45 +3,46 @@ using UnityEngine;
 
 public class Death : MonoBehaviour
 {
+    public savePos savepos;
     public LayerMask deathlayer;
     public Transform groundCheck;
     public bool PlayerDead;
-    private bool HideCanvas;
-    public Canvas UICanvas;
-    public GameObject deathCanvas; 
-    public float fadeDuration = 1.0f;
 
+    public GameObject UICanvas;
+    public GameObject deathCanvas;
 
     void Update()
     {
-        if (isDead())
+        // 1. Trigger death
+        if (!PlayerDead && isDead())
         {
             PlayerDead = true;
-            
-        }
+            savepos.playb = 0;
 
-        if (PlayerDead && !HideCanvas)
-        {
-            UICanvas.enabled = !UICanvas.enabled;
-            HideCanvas = true;
+            UICanvas.SetActive(false);
+            if (deathCanvas != null) deathCanvas.SetActive(true);
+
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+        }
 
-            StartCoroutine(FadeInDeathCanvas());
+
+        if (PlayerDead && savepos.playb == 1)
+        {
+            PlayerDead = false;
+
+            UICanvas.SetActive(true);
+            if (deathCanvas != null) deathCanvas.SetActive(false);
+
+            StartCoroutine(LockCursorNextFrame());
         }
     }
 
-    IEnumerator FadeInDeathCanvas()
+    IEnumerator LockCursorNextFrame()
     {
-        float elapsedTime = 0f;
-
-        while (elapsedTime < fadeDuration)
-        {
-            elapsedTime += Time.deltaTime;
-            yield return null;
-            PlayerDead = false;
-        }
-
+        yield return new WaitForEndOfFrame();
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     bool isDead() => Physics.CheckSphere(groundCheck.position, 1f, deathlayer);

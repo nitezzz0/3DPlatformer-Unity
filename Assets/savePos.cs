@@ -23,7 +23,7 @@ public class savePos : MonoBehaviour
 
     public GameObject DeathCanvas;
 
-    private float playb;
+    public float playb = 1;
 
     public string gameScene = "MainMenu";
 
@@ -46,8 +46,9 @@ public class savePos : MonoBehaviour
 
         }
 
-        if (death.PlayerDead)
+        if (death.PlayerDead && Player.transform.position != Playerpos)
         {
+
             Player.transform.position = Playerpos;
             DeathCanvas.SetActive(true);
 
@@ -57,6 +58,7 @@ public class savePos : MonoBehaviour
         if (playb == 2)
         {
             SceneManager.LoadScene(gameScene);
+
         }
 
         if (playb == 1)

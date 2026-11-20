@@ -59549,6 +59549,7 @@ MonoBehaviour:
   CheckPoint: {fileID: 0}
   flag: {fileID: 0}
   DeathCanvas: {fileID: 1713542315}
+  playb: 0
   gameScene: MainMenu
 --- !u!4 &626086768
 Transform:
@@ -97998,7 +97999,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 64066dfc9d6c7d340a529b8a49df8349, type: 3}
       propertyPath: m_LocalScale.x
-      value: 30.996431
+      value: 29.846155
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 64066dfc9d6c7d340a529b8a49df8349, type: 3}
       propertyPath: m_LocalScale.y
@@ -98010,7 +98011,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 64066dfc9d6c7d340a529b8a49df8349, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.757
+      value: -1.689
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 64066dfc9d6c7d340a529b8a49df8349, type: 3}
       propertyPath: m_LocalPosition.y
@@ -179658,9 +179659,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2096284936562746114, guid: b106d97306857d74c819e37343c5cd26, type: 3}
+      propertyPath: savepos
+      value: 
+      objectReference: {fileID: 626086767}
+    - target: {fileID: 2096284936562746114, guid: b106d97306857d74c819e37343c5cd26, type: 3}
       propertyPath: UICanvas
       value: 
-      objectReference: {fileID: 881568809}
+      objectReference: {fileID: 881568806}
     - target: {fileID: 2096284936562746114, guid: b106d97306857d74c819e37343c5cd26, type: 3}
       propertyPath: deathCanvas
       value: 
