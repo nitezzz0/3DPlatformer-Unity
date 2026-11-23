@@ -12,12 +12,19 @@ public class PlayerControls : MonoBehaviour
 
     public float fallMultiplier;
 
+    private bool isFalling;
+
+
     public float movementSpeed = 5;
     public float jumpForce = 5;
+
 
     public Transform groundCheck;
     public LayerMask ground;
     public LayerMask bounce;
+
+    public Animator anim;
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -50,6 +57,16 @@ public class PlayerControls : MonoBehaviour
         {
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, 11.2f, rb.linearVelocity.z);
         }
+
+        if (rb.linearVelocity.y < -5)
+        {
+            isFalling = true;
+        }
+
+        anim.SetBool("Onground", isGrounded());
+        anim.SetBool("Falling", isFalling);
+
+
 
     }
 

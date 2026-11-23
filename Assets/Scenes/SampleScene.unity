@@ -149763,6 +149763,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1556299735}
   m_SourcePrefab: {fileID: 100100000, guid: 0970a6a976c33f5438614b1f6c994a6c, type: 3}
+--- !u!1 &1777347769 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 64066dfc9d6c7d340a529b8a49df8349, type: 3}
+  m_PrefabInstance: {fileID: 2002665945}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1777577345
 GameObject:
   m_ObjectHideFlags: 0
@@ -149909,6 +149914,26 @@ MeshFilter:
 --- !u!4 &1791821420 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 64066dfc9d6c7d340a529b8a49df8349, type: 3}
+  m_PrefabInstance: {fileID: 2002665945}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1791821421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777347769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e3a75fdad657084b891594f86b482f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationHandler
+  animator: {fileID: 1791821422}
+  smoothing: 0.03
+  runningSmoothing: 0.03
+--- !u!95 &1791821422 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 64066dfc9d6c7d340a529b8a49df8349, type: 3}
   m_PrefabInstance: {fileID: 2002665945}
   m_PrefabAsset: {fileID: 0}
 --- !u!43 &1796867350
@@ -161811,7 +161836,7 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: 64066dfc9d6c7d340a529b8a49df8349, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 668c2c48d902adf4d9b7d3090d386fa7, type: 2}
+      objectReference: {fileID: 9100000, guid: 9ca1f65f379060a49b9ee682c6e436c7, type: 2}
     - target: {fileID: 5866666021909216657, guid: 64066dfc9d6c7d340a529b8a49df8349, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
@@ -161819,7 +161844,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 64066dfc9d6c7d340a529b8a49df8349, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1791821421}
   m_SourcePrefab: {fileID: 100100000, guid: 64066dfc9d6c7d340a529b8a49df8349, type: 3}
 --- !u!43 &2006441542
 Mesh:
@@ -177740,6 +177768,10 @@ PrefabInstance:
       propertyPath: m_ControllerManager.Controllers.Array.data[1].InputValue
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 5431277015183835267, guid: b106d97306857d74c819e37343c5cd26, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 1791821422}
     - target: {fileID: 5431277015183835267, guid: b106d97306857d74c819e37343c5cd26, type: 3}
       propertyPath: fallMultiplier
       value: 1.7
