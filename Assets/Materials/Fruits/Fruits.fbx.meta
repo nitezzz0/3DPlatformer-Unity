@@ -8,22 +8,22 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: LichiiFruit
-    second: {fileID: 2100000, guid: 9a4222c2b6502034886f438f7d2de218, type: 2}
+    second: {fileID: 2100000, guid: a22c36500a29de947b6a7f5c16ab5bdf, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: LichiiLeafs
-    second: {fileID: 2100000, guid: 726539f3720fd5443a91a6f6d0e019fa, type: 2}
+    second: {fileID: 2100000, guid: 8e070d5c249b051439a6f710ea19c7f3, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: MangosteenEx
-    second: {fileID: 2100000, guid: 7fefc0b6b0c6c2d4bb04a9ea4f13cfcb, type: 2}
+    second: {fileID: 2100000, guid: a3f68b72a38d20e46b455db3da02bcaf, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: MangosteenIn
-    second: {fileID: 2100000, guid: 8114b51de11c27e4eb8ee40358ec6fcf, type: 2}
+    second: {fileID: 2100000, guid: 713ee8d1f1414f74c94f8256d1fd14b6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

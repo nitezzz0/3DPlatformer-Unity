@@ -3,6 +3,7 @@ using UnityEngine;
 public class Collection : MonoBehaviour
 {
     public PlayerControls collectablesV;
+    public GameObject UIMarker;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -10,6 +11,7 @@ public class Collection : MonoBehaviour
         {
             collectablesV.Collectables += 1;
             gameObject.SetActive(false);
+            UIMarker.SetActive(false);
         }
     }
 }

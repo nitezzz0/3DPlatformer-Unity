@@ -2,6 +2,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine.Windows;
 
 public class PlayerControls : MonoBehaviour
@@ -11,6 +13,8 @@ public class PlayerControls : MonoBehaviour
     public Transform player;
 
     public float Collectables;
+
+    public Text Collectablestxt;
 
     public float fallMultiplier;
 
@@ -68,7 +72,13 @@ public class PlayerControls : MonoBehaviour
         anim.SetBool("Onground", isGrounded());
         anim.SetBool("Falling", isFalling);
 
+        Collectablestxt.text = Collectables.ToString() + "/3";
 
+        if (Collectables == 3)
+        {
+            Time.timeScale = 1f;
+            SceneManager.LoadScene("EndScreen");
+        }
 
     }
 

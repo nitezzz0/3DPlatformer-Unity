@@ -180423,6 +180423,10 @@ PrefabInstance:
       propertyPath: fallMultiplier
       value: 1.7
       objectReference: {fileID: 0}
+    - target: {fileID: 5431277015183835267, guid: b106d97306857d74c819e37343c5cd26, type: 3}
+      propertyPath: Collectablestxt
+      value: 
+      objectReference: {fileID: 1020581032}
     - target: {fileID: 6156504459679252905, guid: b106d97306857d74c819e37343c5cd26, type: 3}
       propertyPath: CollideAgainst.m_Bits
       value: 4416
@@ -180664,6 +180668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   collectablesV: {fileID: 1546449148}
+  UIMarker: {fileID: 286169274}
 --- !u!65 &8482381506409911142
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -180787,6 +180792,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   collectablesV: {fileID: 1546449148}
+  UIMarker: {fileID: 70382069}
 --- !u!54 &8544783547366462344
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -180870,6 +180876,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   collectablesV: {fileID: 1546449148}
+  UIMarker: {fileID: 1415410850}
 --- !u!65 &8707273952112997466
 BoxCollider:
   m_ObjectHideFlags: 0
