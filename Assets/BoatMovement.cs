@@ -22,7 +22,7 @@ public class BoatControls : MonoBehaviour
 
     void Update()
     {
-        // Reset input to zero if not colliding, so it drifts to a stop using drag
+
         if (targetPlatform.canDrive)
         {
             input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
