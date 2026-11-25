@@ -10,6 +10,8 @@ public class PlayerControls : MonoBehaviour
     private Rigidbody rb;
     public Transform player;
 
+    public float Collectables;
+
     public float fallMultiplier;
 
     private bool isFalling;
