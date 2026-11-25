@@ -88536,8 +88536,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10.5, y: 10.7}
-  m_SizeDelta: {x: 249.0788, y: 40.5954}
+  m_AnchoredPosition: {x: 10.5, y: 11.3844}
+  m_SizeDelta: {x: 254.9641, y: 40.5954}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1171762463
 MonoBehaviour:
@@ -88572,7 +88572,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Fruits Colected
+  m_Text: Fruits collected
 --- !u!222 &1171762464
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -180420,6 +180420,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1791821422}
     - target: {fileID: 5431277015183835267, guid: b106d97306857d74c819e37343c5cd26, type: 3}
+      propertyPath: jumpForce
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5431277015183835267, guid: b106d97306857d74c819e37343c5cd26, type: 3}
+      propertyPath: platformco
+      value: 
+      objectReference: {fileID: 324209370}
+    - target: {fileID: 5431277015183835267, guid: b106d97306857d74c819e37343c5cd26, type: 3}
       propertyPath: fallMultiplier
       value: 1.7
       objectReference: {fileID: 0}
@@ -180427,6 +180435,10 @@ PrefabInstance:
       propertyPath: Collectablestxt
       value: 
       objectReference: {fileID: 1020581032}
+    - target: {fileID: 5431277015183835267, guid: b106d97306857d74c819e37343c5cd26, type: 3}
+      propertyPath: groundCheckRadius
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 6156504459679252905, guid: b106d97306857d74c819e37343c5cd26, type: 3}
       propertyPath: CollideAgainst.m_Bits
       value: 4416

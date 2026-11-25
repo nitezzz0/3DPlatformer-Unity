@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Collection : MonoBehaviour
 {
+    public AudioClip collectSound;
     public PlayerControls collectablesV;
     public GameObject UIMarker;
 
@@ -9,9 +10,11 @@ public class Collection : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+
+
             collectablesV.Collectables += 1;
-            gameObject.SetActive(false);
             UIMarker.SetActive(false);
+            gameObject.SetActive(false);
         }
     }
 }

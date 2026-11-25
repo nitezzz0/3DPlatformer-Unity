@@ -1,8 +1,11 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class FlagMove : MonoBehaviour
 {
     private Vector3 originalPos;
+
+    private AudioSource AudioSource;
 
 
 
@@ -10,6 +13,7 @@ public class FlagMove : MonoBehaviour
     void Start()
     {
         originalPos = transform.position;
+        AudioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -21,6 +25,8 @@ public class FlagMove : MonoBehaviour
             {
                 transform.position = new Vector3(transform.position.x, originalPos.y + 0.7f, transform.position.z);
                 GetComponent<Collider>().enabled = false;
+
+                AudioSource.Play();
 
             }
         }
