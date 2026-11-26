@@ -40758,6 +40758,7 @@ MonoBehaviour:
   virtualCamera: {fileID: 2076423843}
   Boatcamera: {fileID: 747134265}
   player: {fileID: 1546449137}
+  anim: {fileID: 1791821422}
 --- !u!64 &324209371
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -77375,6 +77376,7 @@ MonoBehaviour:
   virtualCamera: {fileID: 0}
   Boatcamera: {fileID: 0}
   player: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!1 &993542488
 GameObject:
   m_ObjectHideFlags: 0
@@ -180426,7 +180428,7 @@ PrefabInstance:
     - target: {fileID: 5431277015183835267, guid: b106d97306857d74c819e37343c5cd26, type: 3}
       propertyPath: platformco
       value: 
-      objectReference: {fileID: 324209370}
+      objectReference: {fileID: 987737458}
     - target: {fileID: 5431277015183835267, guid: b106d97306857d74c819e37343c5cd26, type: 3}
       propertyPath: fallMultiplier
       value: 1.7
@@ -180679,6 +180681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79456877938a65e40ae1f95b1c154bc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  collectSound: {fileID: 0}
   collectablesV: {fileID: 1546449148}
   UIMarker: {fileID: 286169274}
 --- !u!65 &8482381506409911142
@@ -180803,6 +180806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79456877938a65e40ae1f95b1c154bc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  collectSound: {fileID: 0}
   collectablesV: {fileID: 1546449148}
   UIMarker: {fileID: 70382069}
 --- !u!54 &8544783547366462344
@@ -180887,6 +180891,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79456877938a65e40ae1f95b1c154bc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  collectSound: {fileID: 0}
   collectablesV: {fileID: 1546449148}
   UIMarker: {fileID: 1415410850}
 --- !u!65 &8707273952112997466

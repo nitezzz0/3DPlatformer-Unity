@@ -69,7 +69,6 @@ public class PlayerControls : MonoBehaviour
 
         anim.SetBool("Onground", grounded);
         anim.SetBool("Falling", isFalling);
-        anim.SetBool("onBoat", platformco.canDrive);
 
         Collectablestxt.text = Collectables.ToString() + "/3";
         

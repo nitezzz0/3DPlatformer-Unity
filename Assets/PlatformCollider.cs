@@ -15,6 +15,8 @@ public class PlatformCollider : MonoBehaviour
 
     public GameObject player;
 
+    public Animator anim;
+
     public void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.name == "Player")
@@ -57,6 +59,10 @@ public class PlatformCollider : MonoBehaviour
             player.gameObject.GetComponent<PlayerControls>().enabled = true;
             virtualCamera.Follow = player.transform;
         }
+
+        anim.SetBool("onBoat", canDrive);
+
+
 
     }
 }
